@@ -15,3 +15,17 @@ How to setup
 12. tap Clear will clear records in the app, tap Delete All will clear records in the device
 13. tap disconnect, the app will disconnect the device 
 
+2021-7-13 v1.1
+How to setup
+1. get a thunderboard EFR32BG22 
+2. git clone https://github.com/mattji01/silabs-BGM
+3. flash silabs-bgm.hex
+4. if the phone bonded with the device before, 
+	please remove the device from the bluetooth setting in the phone
+5. open lightblue, filter silabs-BGM, connect it
+6. the device have no records inside by default, you need to press btn0 to simulate one BGM measurement
+	suppose you have pressed btn0 5 times
+8. set Notify of 0x2A18 characteristic, set indicate of 0x2A52 characteristic
+9. write "0101" to 0x2A52 read all records, 
+10. there will be 5 notifications(records) in 0x2A18, and 1 indication in 0x2A52 to show the process is completed.
+
