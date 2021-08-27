@@ -43,27 +43,27 @@ tap More Info under the Unknown Service(IADC service), there are 7 characteristi
 
 1. internal ADC result(mV), UUID 4b41881a-cb05-4112-a913-42b34dac6204
 
-   ![](\images\interval_adc.jpg)
+   ![](.\images\interval_adc.jpg)
 
 2. external ADC result(mV), UUID 85577c9f-c9fe-4821-b0e6-bbc731890301
 
-   ![](\images\external_adc.jpg)
+   ![](.\images\external_adc.jpg)
 
 3. DAC adjust, set DAC output voltage level, in range of 0-1.25v, UUID edfd1260-c69d-4dec-8996-3a898e9f8b84, write 0.625v to DAC
 
-   <img src="\images\set_dac.jpg" style="zoom: 67%;" />
+   <img src=".\images\set_dac.jpg" style="zoom: 67%;" />
 
 4. Die Temperature, UUID b97a8a77-f1fd-4a13-a492-05360de078cd, read chipset die temperature
 
-   ![](\images\temperature.jpg)
+   ![](.\images\temperature.jpg)
 
 5. offset of the internal ADC(mV), UUID 7489487f-3519-455e-8e1b-1e9dc56c3ba9, 
 
-   ![](\images\offset.jpg)
+   ![](.\images\offset.jpg)
 
 6. Gain error of the internal ADC, UUID 4a9e0629-48a0-4a89-9314-6f6c70879c6d
 
-   ![](\images\gain_error.jpg)
+   ![](.\images\gain_error.jpg)
 
 ##### Get Glucose data
 
@@ -77,23 +77,23 @@ tap More Info under the Unknown Service(IADC service), there are 7 characteristi
 
    set indicate of 0x2A52 characteristic(Record Access Control Point characteristic),
 
-![](\images\set_notify.jpg)
+![](.\images\set_notify.jpg)
 
 4. write "0101" to 0x2A52, it means read all records, you can find this test case in Glucose.service.TS.1.0.9 section 4.9.1: GLS/SEN/SPR/BV-01-C [Report Stored Records - All records]), 
 
-![](\images\read_all_records.jpg)
+![](.\images\read_all_records.jpg)
 
 5. there will be 5 notifications in 0x2A18, it means 5 Glucose Measurement records
 
-<img src="\images\measure.jpg" style="zoom:67%;" />
+<img src=".\images\measure.jpg" style="zoom:67%;" />
 
 6. there will be 5 notifications in 0x2A34, it means 5 Glucose Measurement Context values
 
-   <img src="\images\context.jpg" style="zoom:67%;" />
+   <img src=".\images\context.jpg" style="zoom:67%;" />
 
 7. and finally 1 indication in 0x2A52 to show the process is completed.
 
-<img src="\images\racp.jpg" style="zoom:67%;" />
+<img src=".\images\racp.jpg" style="zoom:67%;" />
 
 # Create an example application #
 
