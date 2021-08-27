@@ -35,7 +35,7 @@ open EFR connect app, filter silabs-BGM, connect it.
 
 there are two major service, Glucose and the IADC service, the IADC service UUID is fd5e3ed9-58c1-4064-bda9-02aa5116a0ef
 
-<img src=".\images\service.jpg" style="zoom:67%;" />
+<img src="./images/service.jpg" style="zoom:67%;" />
 
 ##### Get IADC data
 
@@ -51,7 +51,7 @@ tap More Info under the Unknown Service(IADC service), there are 7 characteristi
 
 3. DAC adjust, set DAC output voltage level, in range of 0-1.25v, UUID edfd1260-c69d-4dec-8996-3a898e9f8b84, write 0.625v to DAC
 
-   <img src=".\images\set_dac.jpg" style="zoom: 67%;" />
+   <img src="./images/set_dac.jpg" style="zoom: 67%;" />
 
 4. Die Temperature, UUID b97a8a77-f1fd-4a13-a492-05360de078cd, read chipset die temperature
 
@@ -77,23 +77,23 @@ tap More Info under the Unknown Service(IADC service), there are 7 characteristi
 
    set indicate of 0x2A52 characteristic(Record Access Control Point characteristic),
 
-![](.\images\set_notify.jpg)
+![](./images/set_notify.jpg)
 
 4. write "0101" to 0x2A52, it means read all records, you can find this test case in Glucose.service.TS.1.0.9 section 4.9.1: GLS/SEN/SPR/BV-01-C [Report Stored Records - All records]), 
 
-![](.\images\read_all_records.jpg)
+![](./images/read_all_records.jpg)
 
 5. there will be 5 notifications in 0x2A18, it means 5 Glucose Measurement records
 
-<img src=".\images\measure.jpg" style="zoom:67%;" />
+<img src="./images/measure.jpg" style="zoom:67%;" />
 
 6. there will be 5 notifications in 0x2A34, it means 5 Glucose Measurement Context values
 
-   <img src=".\images\context.jpg" style="zoom:67%;" />
+   <img src="./images/context.jpg" style="zoom:67%;" />
 
 7. and finally 1 indication in 0x2A52 to show the process is completed.
 
-<img src=".\images\racp.jpg" style="zoom:67%;" />
+<img src="./images/racp.jpg" style="zoom:67%;" />
 
 # Create an example application #
 
